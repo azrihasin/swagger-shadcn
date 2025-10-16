@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
+import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
+import { OpenApiSpecProvider } from "@/components/openapi-spec-provider";
 import { ThemeProvider } from "@/components/theme-provider";
 
 const geistSans = Geist({
@@ -36,7 +38,9 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+          <OpenApiSpecProvider source={{ type: "file", path: "/specs/example.yaml" }}>
+            {children}
+          </OpenApiSpecProvider>
         </ThemeProvider>
       </body>
     </html>

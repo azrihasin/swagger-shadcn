@@ -1,4 +1,5 @@
 import { ModeToggle } from "@/components/mode-toggle";
+import { SpecSummaryCard } from "@/components/spec-summary-card";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -38,6 +39,8 @@ export default function Home() {
           <ModeToggle />
         </div>
       </div>
+
+      <SpecSummaryCard className="max-w-3xl" />
 
       <Card className="w-full max-w-3xl">
         <CardHeader>
